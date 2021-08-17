@@ -17,3 +17,12 @@ databaseChangeLog:
               - column:
                   name: content
                   type: text
+        - createIndex:
+            clustered: false
+            columns:
+              - column:
+                  name: content
+            indexName: idx_content
+            schemaName: public
+            tableName: data
+            unique: false
