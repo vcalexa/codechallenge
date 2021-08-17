@@ -13,7 +13,15 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    services:
+      postgres_db:
+        image: postgres
+        env:
+          POSTGRES_USER: codechallengeapp
+          POSTGRES_PASSWORD: codechallengepassword
+          POSTGRES_DB: codechallenge
+        ports:
+        - 5432:5432
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 8
